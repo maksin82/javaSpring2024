@@ -151,11 +151,6 @@ public class hw5 {
 
     //5.2.3
     public static void pyramid() {
-        for (int i = 9; i >= 0; i--) {
-            for (int j = i; j >= 0; j--) {
-                System.out.print(j + " ");
-            }
-            System.out.println("");
-        }
+        
     }
 }
