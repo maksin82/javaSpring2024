@@ -38,9 +38,9 @@ public class hw5 {
     //5.1.2
     public static int maxInt(int[] arr) {
         int maxInt = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (maxInt < arr[i]) {
-                maxInt = arr[i];
+        for (int i : arr) {
+            if (maxInt < i) {
+                maxInt = i;
             }
         }
         return maxInt;
@@ -119,6 +119,11 @@ public class hw5 {
 //                count++;
 //            }
 //        }
+
+//        for (int i = 0; i < arr.length; i++) {
+//            count += arr[i].length;
+//        }
+
         for (int[] a : arr) {
             count += (int) Arrays.stream(a).count();
         }
@@ -131,26 +136,34 @@ public class hw5 {
             for (int j = 0; j <= i; j++) {
                 System.out.print(j + " ");
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 
+
     //5.2.2
     public static void pyramidRight() {
-        int count = 9;
         for (int i = 9; i >= 0; i--) {
-            count = 9 - i;
-            System.out.print("  ".repeat(count));
+            System.out.print("  ".repeat(9 - i));
             for (int j = 0; j <= i; j++) {
                 System.out.print(j + " ");
 
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 
     //5.2.3
     public static void pyramid() {
-        
+        for (int i = 9; i >= 0; i--) {
+            System.out.print("  ".repeat(9 - i));
+            for (int j = i; j >= 0; j--) {
+                System.out.print(j + " ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
     }
 }

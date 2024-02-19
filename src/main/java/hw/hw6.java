@@ -33,8 +33,7 @@ public class hw6 {
 
     //6.2
     public static int eeee(String str) {
-        int e = str.length() - str.replace("е", "").length();
-        return e;
+        return str.length() - str.replace("е", "").length();
     }
 
     //6.3
@@ -53,15 +52,23 @@ public class hw6 {
     //*
     public static void rit(String str) {
         str = str.toLowerCase();
-        String strRit = "";
-        int count = 0;
-        do {
-            count = str.indexOf("рит", count);
-            strRit += count + " ";
-            count ++;
-        } while (str.indexOf("рит", count) > 0);
+        String subStr = "рит";
+//        String strRit = "";
+//        int count = 0;
+//        do {
+//            count = str.indexOf(subStr, count);
+//            strRit += count + " ";
+//            count ++;
+//        } while (str.indexOf(subStr, count) > 0);
 
-        System.out.println(strRit);
+        for (int i = 0; i <= str.length() - subStr.length(); i++) {
+            String temp = str.substring(i,i + subStr.length());
+            if (temp.equals(subStr)) {
+                System.out.println(i);
+            }
+        }
+
+//        System.out.println(strRit);
     }
 
     //6.2.1

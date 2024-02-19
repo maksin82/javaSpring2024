@@ -1,31 +1,79 @@
-
+import java.util.Arrays;
 
 public class Codewars {
     public static void main(String[] args) {
 
         String time = "The greatest 2 victory is that 3 which requires no battle";
         String num = "1234";
-        int a = 0;
-        int b = -3;
+        int a = 3;
+        int b = 4;
+        int[] d = {34, 15, 88, 2};
         double c = 0.5;
+        Block brik = new Block(new int[]{2, 6, 7});
 
-        System.out.println(makeNegative(a));
-        System.out.println(noSpace(time));
+        System.out.println(declareWinner(new Fighter("Harald", 208, 5), new Fighter("Harry", 5, 4), "Harry"));
 
+    }
+
+    public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
+        String winner = "";
+        if (firstAttacker.equals(fighter1.name)) {
+            do {
+                fighter2.health -= fighter1.damagePerAttack;
+                if (fighter2.health <= 0) {
+                    winner = fighter1.name;
+                    break;
+                }
+                fighter1.health -= fighter2.damagePerAttack;
+                if (fighter1.health <= 0) {
+                    winner = fighter2.name;
+                    break;
+                }
+            } while (fighter1.health >= 0 || fighter2.health >= 0);
+        } else {
+            do {
+                fighter1.health -= fighter2.damagePerAttack;
+                if (fighter1.health <= 0) {
+                    winner = fighter2.name;
+                    break;
+                }
+                fighter2.health -= fighter1.damagePerAttack;
+                if (fighter2.health <= 0) {
+                    winner = fighter1.name;
+                    break;
+                }
+            } while (fighter1.health >= 0 || fighter2.health >= 0);
+        }
+        return winner;
+    }
+
+    public static int findSmallestInt(int[] args) {
+//        int[] arr = Arrays.stream(args).sorted().toArray();
+//        return arr[0];
+        Arrays.sort(args);
+        return args[0];
+    }
+
+    public static boolean isLove(final int flower1, final int flower2) {
+        return (flower1 + flower2) % 2 != 0;
+//        return flower1 % 2 != flower2 % 2;
     }
 
     public static int makeNegative(final int x) {
         return Math.abs(x) * (-1);
     }
+
     public static boolean isEven(double n) {
         return n % 2 == 0;
 
 //        return n % 2 ==0 ? true : false;
     }
+
     public static int simpleMultiplication(int n) {
-        return n % 2 ==0 ? n * 8 :n * 9;
+        return n % 2 == 0 ? n * 8 : n * 9;
 //        return n * (n % 2 + 8);
     }
+
     public static int paperWork(int n, int m) {
         if (n < 0 || m < 0) {
             return 0;
@@ -104,6 +152,7 @@ public class Codewars {
 //        return x.replace(" ", "");
 //        return x.replaceAll("\\s+","");
     }
+
     public static String solution(String str) {
         String newstr = "";
         for (int i = 0; i < str.length(); i++) {

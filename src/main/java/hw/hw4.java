@@ -42,7 +42,7 @@ public class hw4 {
 
     //4.1.2
     public static void powFive() {
-//        for (int i = 1; i < 10_000; i = i * 5) {
+//        for (int i = 1; i < 10_000; i *= 5) {
 //            System.out.println(i + " ");
 //        }
         int i = 1;
@@ -62,7 +62,7 @@ public class hw4 {
     }
 
     public static void multFour2() {
-        for (int i = 40; i <= 60; i = i + 4) {
+        for (int i = 40; i <= 60; i += 4) {
             System.out.print(i + " ");
         }
     }
