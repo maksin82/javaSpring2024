@@ -1,11 +1,10 @@
-import java.text.DecimalFormat;
 import java.util.Locale;
 
 public class Tasks {
     //      Написать метод, который принимает на вход десятичное число
 //      (например, 10.75), и возвращает строку “10 руб 75 коп”.
     public static String returnRub(double num) {
-        String amount = "";
+        String amount;
         String fraction = String.valueOf(num);
         int a = fraction.indexOf('.') + 1;
         fraction = fraction.substring(a);
@@ -19,9 +18,8 @@ public class Tasks {
 
     public static String returnKg(double num) {
         int fraction = (int) ((num - (int) num) * 100);
-        String weitgh = String.format("%d кг %d гр", (int) num, fraction);
 
-        return weitgh;
+        return String.format("%d кг %d гр", (int) num, fraction);
     }
 
     //    Написать метод, который распечатывает  последовательность чисел

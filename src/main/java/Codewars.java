@@ -1,50 +1,50 @@
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Codewars {
     public static void main(String[] args) {
 
         String time = "The greatest 2 victory is that 3 which requires no battle";
         String num = "1234";
+        String str = "\u00cc";
+        String upDown = str.toUpperCase().toLowerCase(new Locale("lt"));
+        int length = str.length();
+        int upDownLength = upDown.length();
+        System.out.println(upDown + " " + length + " " + upDownLength);
+
         int a = 3;
         int b = 4;
         int[] d = {34, 15, 88, 2};
         double c = 0.5;
         Block brik = new Block(new int[]{2, 6, 7});
-
-        System.out.println(declareWinner(new Fighter("Harald", 208, 5), new Fighter("Harry", 5, 4), "Harry"));
+        System.out.println(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"));
 
     }
 
+
     public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
         String winner = "";
-        if (firstAttacker.equals(fighter1.name)) {
-            do {
-                fighter2.health -= fighter1.damagePerAttack;
-                if (fighter2.health <= 0) {
-                    winner = fighter1.name;
-                    break;
-                }
-                fighter1.health -= fighter2.damagePerAttack;
-                if (fighter1.health <= 0) {
-                    winner = fighter2.name;
-                    break;
-                }
-            } while (fighter1.health >= 0 || fighter2.health >= 0);
-        } else {
-            do {
-                fighter1.health -= fighter2.damagePerAttack;
-                if (fighter1.health <= 0) {
-                    winner = fighter2.name;
-                    break;
-                }
-                fighter2.health -= fighter1.damagePerAttack;
-                if (fighter2.health <= 0) {
-                    winner = fighter1.name;
-                    break;
-                }
-            } while (fighter1.health >= 0 || fighter2.health >= 0);
-        }
+        Fighter firstF = (firstAttacker.equals(fighter1.name) ? fighter1 : fighter2);
+        Fighter secondF = (firstAttacker.equals(fighter1.name) ? fighter2 : fighter1);
+
+        do {
+            secondF.health -= firstF.damagePerAttack;
+            if (secondF.health <= 0) {
+                winner = firstF.name;
+                break;
+            }
+            firstF.health -= secondF.damagePerAttack;
+            if (firstF.health <= 0) {
+                winner = secondF.name;
+                break;
+            }
+        } while (firstF.health >= 0 || secondF.health >= 0);
+
         return winner;
+//        while (true) {
+//            if ((b.health -= a.damagePerAttack) <= 0) return a.name;
+//            if ((a.health -= b.damagePerAttack) <= 0) return b.name;
+//        }
     }
 
     public static int findSmallestInt(int[] args) {
