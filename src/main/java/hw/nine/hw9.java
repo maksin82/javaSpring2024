@@ -12,5 +12,13 @@ public class hw9 {
         Manager manager = new Manager(23, "Bill", "man", 2, 1);
 
         System.out.println(manager.getSalary(a));
+
+        LicensePlate first = new LicensePlate();
+        LicensePlate second = new LicensePlate();
+        LicensePlate secondd = new LicensePlate();
+
+        System.out.println(first.plate);
+        System.out.println(second.plate);
+        System.out.println(secondd.plate);
     }
 }

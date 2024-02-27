@@ -64,6 +64,7 @@ public final class Utils {
         }
         System.out.println(minSubordinates);
     }
+
     static void findMaxSubordinates(Manager[] arr) {
         int maxSubordinates = arr[0].getNumberOfSubordinates();
         for (Manager m : arr) {
@@ -74,5 +75,26 @@ public final class Utils {
         System.out.println(maxSubordinates);
     }
 
-//static void searchHighest
+    static void searchHighestAndSmallestExtra(Manager[] arr) {
+        double highestExtra = 0;
+        double smallestExtra = Integer.MAX_VALUE;
+        String nameH = "";
+        String nameS = "";
+
+        for (Manager m : arr) {
+            if (highestExtra < (m.getSalary() - m.getBaseSalary())) {
+                highestExtra = m.getSalary() - m.getBaseSalary();
+                nameH =  " " + m.getName();
+            }
+        }
+        for (Manager m : arr) {
+            if (smallestExtra >= (m.getSalary() - m.getBaseSalary())) {
+                smallestExtra = m.getSalary() - m.getBaseSalary();
+                nameS = " " + m.getName();
+            }
+        }
+        System.out.println("Наименьшая надбавка: " + smallestExtra + " у" + nameS +
+                ", наибольшая надбавка: " + highestExtra + " у" + nameH);
+    }
+
 }
