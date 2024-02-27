@@ -4,6 +4,10 @@ public class Employee {
     private String name;
     double baseSalary = 100.0;
 
+    public Employee(String name) {
+        this.name = name;
+    }
+
 
     public double getBaseSalary() {
         return baseSalary;
@@ -22,6 +26,6 @@ public class Employee {
     }
 
     public double getSalary() {
-        return baseSalary;
+        return getBaseSalary();
     }
 }
