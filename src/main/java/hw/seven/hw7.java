@@ -7,13 +7,9 @@ public class hw7 {
         one.gender = "man";
         one.getName();
 
-        Employee first = new Employee();
-        first.name = "Mark";
-        first.salary = 753;
+        Employee first = new Employee("Mark", 753);
 
-        Employee second = new Employee();
-        second.name = "Marks";
-        second.salary = 159;
+        Employee second = new Employee("Marks", 159);
 
         System.out.println(second.isSameName(first));
 
