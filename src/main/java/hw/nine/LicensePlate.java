@@ -1,6 +1,14 @@
 package hw.nine;
 
- class LicensePlate {
-    final String plate = LicensePlateMaker.getCarNum();
+public class LicensePlate {
+    //    final String plate = LicensePlateMaker.getCarNum();
+    private String plate;
 
+    LicensePlate(String plate) {
+        this.plate = plate;
+    }
+
+    public String getPlate() {
+        return plate;
+    }
 }

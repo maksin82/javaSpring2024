@@ -5,7 +5,7 @@ import hw.seven.Employee;
 public class hw9 {
     public static void main(String[] args) {
         Employee employee = new Employee(18, "Natan", "man", 2);
-        Month[] a = {new Month(1), new Month(2), new Month(3)};
+        Month[] a = {new Month(3), new Month(4), new Month(5)};
 
         System.out.println(employee.getSalary(a));
 
@@ -13,12 +13,25 @@ public class hw9 {
 
         System.out.println(manager.getSalary(a));
 
-        LicensePlate first = new LicensePlate();
-        LicensePlate second = new LicensePlate();
-        LicensePlate secondd = new LicensePlate();
+        LicensePlateMaker nyMaker = new LicensePlateMaker("NY");
+        LicensePlateMaker caMaker = new LicensePlateMaker("CA");
 
-        System.out.println(first.plate);
-        System.out.println(second.plate);
-        System.out.println(secondd.plate);
+        LicensePlate plate1 = nyMaker.getCarNum();
+        LicensePlate plate2 = nyMaker.getCarNum();
+        LicensePlate plate3 = caMaker.getCarNum();
+        LicensePlate plate4 = nyMaker.getCarNum();
+        LicensePlate plate5 = caMaker.getCarNum();
+
+        System.out.println(plate1.getPlate());
+        System.out.println(plate2.getPlate());
+        System.out.println(plate3.getPlate());
+        System.out.println(plate4.getPlate());
+        System.out.println(plate5.getPlate());
+
+        System.out.println(nyMaker.getCarNum().getPlate());
+        System.out.println(nyMaker.getCarNum().getPlate());
+        System.out.println(nyMaker.getCarNum().getPlate());
+        System.out.println(nyMaker.getCarNum().getPlate());
+        System.out.println(nyMaker.getCarNum().getPlate());
     }
 }

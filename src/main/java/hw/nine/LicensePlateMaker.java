@@ -1,13 +1,17 @@
 package hw.nine;
 
 public class LicensePlateMaker {
-    static String prefix = "CA";
-    static int num = 1;
+    private String prefix;
+    private static int num = 0;
+//    private int num = 0;
 
-    static String getCarNum() {
-        String carNum = prefix + "-" + num;
+    public LicensePlateMaker(String prefix) {
+        this.prefix = prefix;
+    }
+
+    public LicensePlate getCarNum() {
         num++;
-        return carNum;
+        return new LicensePlate(prefix + "-" + num);
     }
 
 
