@@ -5,7 +5,7 @@ public class Codewars {
     public static void main(String[] args) {
 
         String time = "The greatest 2 victory is that 3 which requires no battle";
-        String num = "1234";
+        String num = "*";
         String str = "\u00cc";
         String upDown = str.toUpperCase().toLowerCase(new Locale("lt"));
         int length = str.length();
@@ -13,13 +13,42 @@ public class Codewars {
         System.out.println(upDown + " " + length + " " + upDownLength);
 
         int a = 30;
-        int b = 7775460;  //16
+        int b = 7;  //16
         int[] d = {34, 15, 88, 2};
         double c = 0.5;
         Block brik = new Block(new int[]{2, 6, 7});
-        System.out.println(factors(b));
+        System.out.println(basicMath(num, a, b));
     }
 
+    public static Integer basicMath(String op, int v1, int v2) {
+//        Integer bM = switch (op) {
+//            case "+" -> v1 + v2;
+//            case "-" -> v1 - v2;
+//            case "*" -> v1 * v2;
+//            case "/" -> v1 / v2;
+//            default ->  v1;
+//        };
+//        return bM;
+        return op.equals("+") ? (v1+v2) : op.equals("-") ? (v1-v2) : op.equals("*") ? (v1*v2) : (v2==0) ? null : (v1/v2);
+    }
+
+    public static String switchItUp(int number) {
+//        String numbers = switch (number) {
+//            case 0 -> "Zero";
+//            case 1 -> "One";
+//            case 2 -> "Two";
+//            case 3 -> "Three";
+//            case 4 -> "Four";
+//            case 5 -> "Five";
+//            case 6 -> "Six";
+//            case 7 -> "Seven";
+//            case 8 -> "Eight";
+//            case 9 -> "Nine";
+//            default -> "NaN";
+//        };
+//        return numbers;
+        return new String[]{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}[number];
+    }
 
     public static String factors(int n) {
         StringBuilder result = new StringBuilder();
@@ -40,6 +69,7 @@ public class Codewars {
         }
         return result.toString();
     }
+
     public static int digital_root(int n) {
 //        while (n >= 10) {
 //            n = n % 10 + n / 10;
