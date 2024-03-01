@@ -12,15 +12,77 @@ public class Codewars {
         int upDownLength = upDown.length();
         System.out.println(upDown + " " + length + " " + upDownLength);
 
-        int a = 3;
-        int b = 4;
+        int a = 30;
+        int b = 7775460;  //16
         int[] d = {34, 15, 88, 2};
         double c = 0.5;
         Block brik = new Block(new int[]{2, 6, 7});
-        System.out.println(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"));
-
+        System.out.println(factors(b));
     }
 
+
+    public static String factors(int n) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 2; n > 1; i++) {
+            int count = 0;
+            while (n % i == 0) {
+                n /= i;
+                count++;
+            }
+            if (count > 0) {
+                result.append("(").append(i);
+                if (count > 1) {
+                    result.append("**").append(count);
+                }
+                result.append(")");
+            }
+        }
+        return result.toString();
+    }
+    public static int digital_root(int n) {
+//        while (n >= 10) {
+//            n = n % 10 + n / 10;
+//        }
+//        return n;
+        return n == 0 ? 0 : n % 9 == 0 ? 9 : n % 9;
+//        return (n != 0 && n%9 == 0) ? 9 : n % 9;
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) return false;
+        if (num > 1) {
+            for (int i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static String bmi(double weight, double height) {
+        String[] str = {"Underweight", "Normal", "Overweight", "Obese"};
+        double[] doubles = {0, 18.5, 25.0, 30};
+        double bmi = weight / (height * height);
+
+        return bmi <= 18.5 ? "Underweight" : bmi <= 25.0 ? "Normal" : bmi <= 30.0 ? "Overweight" : "Obese";
+//        String answer = "";
+//        for (int i = 0; i < doubles.length; i++) {
+//            if (bmi >= doubles[i]) answer = str[i];
+//        } return answer;
+
+//        if ( bmi <= 18.5) return str[0];
+//        if (bmi <= 25.0)  return str[1];
+//        if (bmi <= 30.0)  return str[2];
+//        return str[3];
+    }
+
+    public static int TwiceAsOld(int dadYears, int sonYears) {
+        int years = dadYears - 2 * sonYears;
+        return Math.abs(years);
+
+    }
 
     public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
         String winner = "";
