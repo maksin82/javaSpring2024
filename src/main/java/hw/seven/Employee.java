@@ -1,44 +1,28 @@
 package hw.seven;
 
-import hw.nine.Month;
-
-public class Employee {
-    private int age;
-    private String name;
-    private String gender;
-    private int salaryInDay;
+public final class Employee extends Person {
     public int salary;
 
-    public Employee(int age, String name, String gender, int salaryInDay) {
-        this.age = age;
-        this.name = name;
-        this.gender = gender;
-        this.salaryInDay = salaryInDay;
-    }
-    public Employee(String name,int salary) {
-        this.name = name;
+    public Employee(String name, int salary) {
+        super(name);
         this.salary = salary;
-    }
-
-    public boolean isSameName(Employee otherEmployee) {
-        if (getName() == null) return otherEmployee == null;
-        return (otherEmployee.getName().equals( getName()));
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getAge() {
         return age;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
     public String getGender() {
         return gender;
     }
 
-    public int getSalaryInDay() {
-        return salaryInDay;
+    public int getSalary() {
+        return salary;
     }
 
     public void setAge(int age) {
@@ -53,15 +37,14 @@ public class Employee {
         this.gender = gender;
     }
 
-    public void setSalaryInDay(int salaryInDay) {
-        this.salaryInDay = salaryInDay;
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
-    public double getSalary(Month[] monthArray) {
-        double salaryInMonth = 0;
-        for (int i = 0; i < monthArray.length; i++) {
-          salaryInMonth += getSalaryInDay() * monthArray[i].numberOfWorkingDays;
-        }
-        return salaryInMonth;
+    public boolean isSameName(Employee otherEmployee) {
+        if (getName() == null) return otherEmployee == null;
+        return (otherEmployee.getName().equals( getName()));
     }
+
+
 }

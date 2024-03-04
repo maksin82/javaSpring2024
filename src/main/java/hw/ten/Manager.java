@@ -1,6 +1,6 @@
 package hw.ten;
 
-public class Manager extends Worker {
+public final class Manager extends Employee {
     private int numberOfSubordinates;
     double baseSalary = super.getBaseSalary();
 
@@ -20,7 +20,7 @@ public class Manager extends Worker {
     @Override
     public double getSalary() {
         if (numberOfSubordinates == 0) {
-            return super.getSalary();
+            return getSalary();
         }
         return getBaseSalary() + getBaseSalary() * ((double) numberOfSubordinates / 100 * 3);
     }

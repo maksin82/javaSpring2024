@@ -32,6 +32,33 @@ public final class MonthUtils {
         return abbreviate;
     }
 
+    public static Month[] firstQuarterArr() {
+        return new Month[]{new Month(1), new Month(2), new Month(3)};
+    }
+
+    public static Month[] secondQuarterArr() {
+        return new Month[]{new Month(4), new Month(5), new Month(6)};
+    }
+
+    public static Month[] thirdQuarterArr() {
+        return new Month[]{new Month(7), new Month(8), new Month(9)};
+    }
+
+    public static Month[] fourthQuarterArr() {
+        return new Month[]{new Month(10), new Month(11), new Month(12)};
+    }
+
+    public static Month[] halfYearArr() {
+        return new Month[]{new Month(1), new Month(2), new Month(3),
+                new Month(4), new Month(5), new Month(6)};
+    }
+
+    public static Month[] yearArr() {
+        return new Month[]{new Month(1), new Month(2), new Month(3),
+                new Month(4), new Month(5), new Month(6),
+                new Month(7), new Month(8), new Month(9),
+                new Month(10), new Month(11), new Month(12)};
+    }
 
     public static int getNumberOfDays() {
         return numberOfDays[num];

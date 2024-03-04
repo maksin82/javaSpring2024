@@ -1,10 +1,10 @@
 package hw.nine;
 
-import hw.seven.Employee;
-
 public class hw9 {
     public static void main(String[] args) {
-        Employee employee = new Employee(18, "Natan", "man", 2);
+
+        Employee employee = new Employee(28, "Linda", "woman", 5);
+
         Month[] a = {new Month(3), new Month(4), new Month(5)};
 
         System.out.println(employee.getSalary(a));
@@ -12,6 +12,9 @@ public class hw9 {
         Manager manager = new Manager(23, "Bill", "man", 2, 1);
 
         System.out.println(manager.getSalary(a));
+
+        System.out.println(manager.getSalary(MonthUtils.yearArr()));
+        System.out.println(manager.getSalary(MonthUtils.halfYearArr()));
 
         LicensePlateMaker nyMaker = new LicensePlateMaker("NY");
         LicensePlateMaker caMaker = new LicensePlateMaker("CA");

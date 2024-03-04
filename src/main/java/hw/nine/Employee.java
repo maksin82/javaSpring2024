@@ -1,12 +1,8 @@
 package hw.nine;
 
-public final class Manager extends BaseEmployee {
-    int numberOfSubordinates;
-
-
-    public Manager(int age, String name, String gender, int salaryInDay, int numberOfSubordinates) {
+public final class Employee extends BaseEmployee{
+    public Employee(int age, String name, String gender, int salaryInDay) {
         super(age, name, gender, salaryInDay);
-        this.numberOfSubordinates = numberOfSubordinates;
     }
 
     @Override
@@ -15,6 +11,6 @@ public final class Manager extends BaseEmployee {
         for (Month month : monthArray) {
             salaryInMonth += getSalaryInDay() * month.numberOfWorkingDays;
         }
-        return salaryInMonth + salaryInMonth*0.1;
+        return salaryInMonth;
     }
 }

@@ -1,6 +1,6 @@
 package hw.ten;
 
-public class Employee {
+public abstract class Employee {
     private String name;
     double baseSalary = 100.0;
 
@@ -25,7 +25,5 @@ public class Employee {
         this.name = name;
     }
 
-    public double getSalary() {
-        return getBaseSalary();
-    }
+    public abstract double getSalary();
 }

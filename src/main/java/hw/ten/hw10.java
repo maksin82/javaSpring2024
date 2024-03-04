@@ -24,7 +24,7 @@ public class hw10 {
         System.out.println(d2.getSalary());
 
         Employee[] eArr = {w1, w2, w3, m1, m2, m3, d1, d2};
-        Manager[] mArr = {m1, m2, m3, d1, d2};
+        Manager[] mArr = {m1, m2, m3};
 
         findName("Teld", eArr);
 

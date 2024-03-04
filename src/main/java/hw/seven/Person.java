@@ -5,10 +5,14 @@ public class Person {
     String name;
     String gender;
 
-    public void getName() {
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
         if (gender.equals("man")) {
-            System.out.println("Mr. " + name);
-        } else System.out.println("Msr. " + name);
+            return ("Mr. " + name);
+        } else return ("Msr. " + name);
     }
 }
 
