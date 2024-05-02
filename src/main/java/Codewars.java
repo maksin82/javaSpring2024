@@ -10,14 +10,74 @@ public class Codewars {
         String upDown = str.toUpperCase().toLowerCase(new Locale("lt"));
         int length = str.length();
         int upDownLength = upDown.length();
-        System.out.println(upDown + " " + length + " " + upDownLength);
+//        System.out.println(upDown + " " + length + " " + upDownLength);
 
-        int a = 30;
+        int a = 86349;
         int b = 7;  //16
         int[] d = {34, 15, 88, 2};
         double c = 0.5;
         Block brik = new Block(new int[]{2, 6, 7});
-        System.out.println(basicMath(num, a, b));
+        System.out.println(getGrade(70, 70, 70));
+    }
+
+
+    public static char getGrade(int s1, int s2, int s3) {
+        int score = (s1 + s2 + s3) / 3;
+
+        return 90 <= score && score <= 100 ? 'A'
+                : 80 <= score && score < 90 ? 'B'
+                : 70 <= score && score < 80 ? 'C'
+                : 60 <= score && score < 70 ? 'D'
+                : 'F';
+
+//        int mean = (s1 + s2 + s3) / 3;
+//        if (mean >= 90) return 'A';
+//        if (mean >= 80) return 'B';
+//        if (mean >= 70) return 'C';
+//        if (mean >= 60) return 'D';
+//        return 'F';
+
+//        s1=(s1+s2+s3)/3;
+//        return s1 >= 90 ? 'A':s1 >= 80 ? 'B':s1 >= 70 ? 'C':s1 >= 60 ? 'D':'F';
+    }
+
+    public static String makeReadable(int seconds) {
+        // Do something
+        int sec = seconds % 60;
+        seconds -= sec;
+        int minut = (seconds / 60) % 60;
+        int hour = seconds / 3600;
+
+        StringBuilder builder = new StringBuilder();
+        if (hour < 10) {
+            builder.append(0).append(hour).append(":");
+        } else builder.append(hour).append(":");
+        if (minut < 10) {
+            builder.append(0).append(minut).append(":");
+        } else builder.append(minut).append(":");
+        if (sec < 10) {
+            builder.append(0).append(sec);
+        } else builder.append(sec);
+
+        return builder.toString();
+
+//         return String.format("%02d:%02d:%02d", seconds / 3600, (seconds / 60) % 60, seconds % 60);
+    }
+
+    public static String boolToWord(boolean b) {
+        return b == true ? "Yes" : "No";
+    }
+
+    public static Double calculate(final double numberOne, final String operation, final double numberTwo) {
+        Double Result = null;
+        Result = switch (operation) {
+            case "+" -> numberOne + numberTwo;
+            case "-" -> numberOne - numberTwo;
+            case "*" -> numberOne * numberTwo + 0.0;
+            case "/" -> numberTwo == 0 ? null : numberOne / numberTwo;
+            default -> Result;
+        };
+        return Result;
     }
 
     public static Integer basicMath(String op, int v1, int v2) {
@@ -29,7 +89,7 @@ public class Codewars {
 //            default ->  v1;
 //        };
 //        return bM;
-        return op.equals("+") ? (v1+v2) : op.equals("-") ? (v1-v2) : op.equals("*") ? (v1*v2) : (v2==0) ? null : (v1/v2);
+        return op.equals("+") ? (v1 + v2) : op.equals("-") ? (v1 - v2) : op.equals("*") ? (v1 * v2) : (v2 == 0) ? null : (v1 / v2);
     }
 
     public static String switchItUp(int number) {

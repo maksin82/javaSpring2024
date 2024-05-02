@@ -62,5 +62,6 @@ public class hw12 {
         }
 
         System.out.println(longestWord);
+
     }
 }
