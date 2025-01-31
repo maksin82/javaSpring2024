@@ -3,43 +3,43 @@ package hw.ten;
 import static hw.ten.Utils.*;
 
 public class hw10 {
-    public static void main(String[] args) {
-        Worker w1 = new Worker("Max");
-        Worker w2 = new Worker("Maxx");
-        Worker w3 = new Worker("Maxxx");
 
-        System.out.println(w1.getName() + " " + w1.getSalary());
+	public static void main(String[] args) {
+		Worker w1 = new Worker("Max");
+		Worker w2 = new Worker("Maxx");
+		Worker w3 = new Worker("Maxxx");
 
-        Manager m1 = new Manager("Ted", 2);
-        Manager m2 = new Manager("Teddy", 1);
-        Manager m3 = new Manager("Todeus", 4);
+		System.out.println(w1.getName() + " " + w1.getSalary());
 
-        System.out.println(m1.getName() + " " + m1.getSalary());
-        System.out.println(m3.getSalary());
+		Manager m1 = new Manager("Ted", 2);
+		Manager m2 = new Manager("Teddy", 1);
+		Manager m3 = new Manager("Todeus", 4);
 
-        Director d1 = new Director("Ron", 6);
-        Director d2 = new Director("Ronn", 1);
+		System.out.println(m1.getName() + " " + m1.getSalary());
+		System.out.println(m3.getSalary());
 
-        System.out.println(d1.getName() + " have " + d1.getSalary() + " and people: " + d1.getNumberOfSubordinates());
-        System.out.println(d2.getSalary());
+		Director d1 = new Director("Ron", 6);
+		Director d2 = new Director("Ronn", 1);
 
-        Employee[] eArr = {w1, w2, w3, m1, m2, m3, d1, d2};
-        Manager[] mArr = {m1, m2, m3};
+		System.out.println(d1.getName() + " have " + d1.getSalary() + " and people: " + d1.getNumberOfSubordinates());
+		System.out.println(d2.getSalary());
 
-        findName("Teld", eArr);
+		Employee[] eArr = { w1, w2, w3, m1, m2, m3, d1, d2 };
+		Manager[] mArr = { m1, m2, m3 };
 
-        findLikeName("M", eArr);
+		findName("Teld", eArr);
 
-        Utils.calcSalaryBudget(eArr);
-        Utils.calcSalaryMax(eArr);
-        Utils.calcSalaryMin(eArr);
+		findLikeName("M", eArr);
 
-        findMaxSubordinates(mArr);
-        findMinSubordinates(mArr);
+		Utils.calcSalaryBudget(eArr);
+		Utils.calcSalaryMax(eArr);
+		Utils.calcSalaryMin(eArr);
 
-        searchHighestAndSmallestExtra(mArr);
+		findMaxSubordinates(mArr);
+		findMinSubordinates(mArr);
 
+		searchHighestAndSmallestExtra(mArr);
 
-    }
+	}
 
 }

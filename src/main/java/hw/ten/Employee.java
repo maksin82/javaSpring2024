@@ -1,29 +1,31 @@
 package hw.ten;
 
 public abstract class Employee {
-    private String name;
-    double baseSalary = 100.0;
 
-    public Employee(String name) {
-        this.name = name;
-    }
+	private String name;
 
+	double baseSalary = 100.0;
 
-    public double getBaseSalary() {
-        return baseSalary;
-    }
+	public Employee(String name) {
+		this.name = name;
+	}
 
-    public void setBaseSalary(double baseSalary) {
-        this.baseSalary = baseSalary;
-    }
+	public double getBaseSalary() {
+		return baseSalary;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setBaseSalary(double baseSalary) {
+		this.baseSalary = baseSalary;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public abstract double getSalary();
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public abstract double getSalary();
+
 }

@@ -1,42 +1,42 @@
 public class Block {
-    int width;
-    int length;
-    int height;
 
-    public Block(int[] brick) {
-        width = brick[0];
-        length = brick[1];
-        height = brick[2];
-    }
+	int width;
 
-    @Override
-    public String toString() {
-        return "Block{" +
-                "width=" + width +
-                ", length=" + length +
-                ", height=" + height +
-                '}';
-    }
+	int length;
 
-    public int getWidth() {
-        return width;
-    }
+	int height;
 
-    public int getLength() {
-        return length;
-    }
+	public Block(int[] brick) {
+		width = brick[0];
+		length = brick[1];
+		height = brick[2];
+	}
 
-    public int getHeight() {
-        return height;
-    }
+	@Override
+	public String toString() {
+		return "Block{" + "width=" + width + ", length=" + length + ", height=" + height + '}';
+	}
 
-    public int getVolume() {
-        int volume = height * length * width;
-        return volume;
-    }
+	public int getWidth() {
+		return width;
+	}
 
-    public int getSurfaceArea() {
-        int area = 2 * (height * width + width * length + height * length);
-        return area;
-    }
+	public int getLength() {
+		return length;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public int getVolume() {
+		int volume = height * length * width;
+		return volume;
+	}
+
+	public int getSurfaceArea() {
+		int area = 2 * (height * width + width * length + height * length);
+		return area;
+	}
+
 }

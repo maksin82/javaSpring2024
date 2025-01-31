@@ -1,14 +1,14 @@
 package hw.ten;
 
-public class Worker extends Employee{
+public class Worker extends Employee {
 
-    public Worker(String name) {
-        super(name);
-    }
+	public Worker(String name) {
+		super(name);
+	}
 
-    @Override
-    public double getSalary() {
-        return baseSalary;
-    }
+	@Override
+	public double getSalary() {
+		return baseSalary;
+	}
 
 }
