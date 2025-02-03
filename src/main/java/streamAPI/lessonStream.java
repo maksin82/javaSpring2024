@@ -76,7 +76,7 @@ public class lessonStream {
 		}
 
 		/**
-		 * Терминальные операции те что возвращают Stream
+		 * Терминальные операции те что закрывают Stream
 		 */
 
 		final List<Integer> ints = new ArrayList<>();
