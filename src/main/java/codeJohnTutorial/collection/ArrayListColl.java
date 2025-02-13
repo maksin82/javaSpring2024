@@ -1,4 +1,4 @@
-package codeJohnTutorial.Collection;
+package codeJohnTutorial.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
