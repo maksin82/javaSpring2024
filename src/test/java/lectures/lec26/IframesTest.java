@@ -1,13 +1,15 @@
 package lectures.lec26;
 
+import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IframesTest {
 
@@ -53,10 +55,10 @@ public class IframesTest {
 		webDriver.switchTo().defaultContent();
 		webDriver.switchTo().frame(0);
 
-		Assert.assertEquals(webDriver.findElement(By.id("announcement-banner")).getTagName(), "section");
+		assertEquals(webDriver.findElement(By.id("announcement-banner")).getTagName(), "section");
 	}
 
-	@AfterClass
+	@AfterAll
 	public void afterClass() {
 		webDriver.quit();
 	}

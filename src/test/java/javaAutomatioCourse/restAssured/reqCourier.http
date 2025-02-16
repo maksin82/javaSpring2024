@@ -1,0 +1,19 @@
+### create
+POST https://qa-scooter.praktikum-services.ru/api/v1/courier
+Content-Type: application/json
+
+{"login":"Marks", "password":"P@ssw0rd", "firstName":"Markovich"}
+
+### login
+POST http://qa-scooter.praktikum-services.ru//api/v1/courier/login
+Content-Type: application/json
+
+{"login":"Marks", "password":"P@ssw0rd"}
+
+### delete
+DELETE https://qa-scooter.praktikum-services.ru/api/v1/courier/475773
+Content-Type: application/json
+
+{
+  "id": "475773"
+}

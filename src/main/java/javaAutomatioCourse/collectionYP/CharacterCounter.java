@@ -1,4 +1,4 @@
-package javaAutomatioCourse.ColectionYP;
+package javaAutomatioCourse.collectionYP;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package javaAutomatioCourse.ColectionYP;
+package javaAutomatioCourse.collectionYP;
 
 
 public class CharacterCounterTest {

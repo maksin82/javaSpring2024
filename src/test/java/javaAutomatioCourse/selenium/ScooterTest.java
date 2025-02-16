@@ -1,4 +1,4 @@
-package javaAutomatioCourse.seleniumYp;
+package javaAutomatioCourse.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
